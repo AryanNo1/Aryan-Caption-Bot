@@ -26,7 +26,6 @@ start_button=InlineKeyboardMarkup(
               ], 
               [
                   InlineKeyboardButton("🔐 Close", callback_data = "close_data")
-                  InlineKeyboardButton("⭐️ Rate me", callback_data = "close_data")
               ] 
         ]
 )
