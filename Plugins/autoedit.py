@@ -14,6 +14,11 @@ usercaption_position = Config.CAPTION_POSITION
 caption_position = usercaption_position.lower()
 caption_text = Config.CAPTION_TEXT
 
+def get_file_id(message):
+    media=message.document or message.audio or message.video
+    return media.file_id
+  
+file_id = get_file_id(media)
 
 @autocaption.on_message(filters.channel & (filters.document | filters.video | filters.audio) & ~filters.edited, group=-1)
 async def editing(bot, message):
@@ -25,7 +30,7 @@ async def editing(bot, message):
          pass 
       if (message.document or message.video or message.audio or message.image): 
           if message.caption:                        
-             file_caption = f"**{message.caption}**"                
+             file_caption = f"`{message.caption}`"                
           else:
              fname = media.file_name
              filename = fname.replace("_", ".")
