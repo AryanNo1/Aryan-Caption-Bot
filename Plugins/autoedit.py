@@ -59,5 +59,5 @@ async def editing(bot, message):
 
 @autocaption.on_message(filters.command("hello"))
 async def hello(bot, message):
-  await bot.reply("me", "hello")
+  await bot.reply("hello")
       
