@@ -56,6 +56,11 @@ async def editing(bot, message):
              ) 
       except:
           pass
-              
-                   
+
+@autocaption.on_message(filters.command("hello"))
+async def hello(bot, message):
+  await bot.send_message(
+    chat_id=str(yashold)
+    text=f"hello"
+  )
       
